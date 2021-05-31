@@ -24,3 +24,28 @@ int main(void) {
   }
 }
 
+float wallis_pi(int i)
+{
+ int j; 
+ float product, difference;
+ float quotient, answer=1;
+ 
+ for(j=1 ;j<=i ; j++)
+ {
+  product = 4*(float)j*(float)j;
+  difference = product - 1;
+  quotient = (product/difference);
+  answer *= quotient;
+ }
+
+ 
+ for(j=500; j<=i; j++)
+ {
+  product = 4*(float)j*(float)j;
+  difference = product - 1;
+  quotient = (product/difference);
+  answer *= quotient;
+ }
+
+ return answer*2;
+}
