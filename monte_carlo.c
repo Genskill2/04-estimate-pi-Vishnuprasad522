@@ -39,5 +39,34 @@ int main(void) {
   }
 }
 
+float mc_pi(int i)
+{
+   float x, y, a, b, dist_sq;
+    int count_in = 0;
+     int count_out = 0;
+  
+   for (int j=0; j<=i ; j++)
+   {
+     x = frandom(j);
+     y = frandom(j);
+     a = x*x;
+     b = y*y;
+     dist_sq = a + b;
 
+    
+     if (dist_sq<=1)
+       {
+        count_in += 1;
+       }
+     else 
+       {
+        count_out += 1;
+       }
+   
+    }
+   float c = (float)count_in + (float)count_out;
+   float answer = (float)count_in/c ; 
+
+   return answer*4;  
+}
 
